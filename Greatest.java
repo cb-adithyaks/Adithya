@@ -7,7 +7,7 @@ class Greatest
 	{
 		int a,b,c;
 		Scanner in= new Scanner(System.in);
-		a=in.nextInt();
+		a=in.nextInt();					//Getting 3 numbers as input
 		b=in.nextInt();
 		c=in.nextInt();
 		if(a>b && a>c)
