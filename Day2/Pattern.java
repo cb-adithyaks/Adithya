@@ -7,8 +7,8 @@ class Pattern
     public static void main(String ar[]) throws Exception{
         int i,j;
 	long pattern=1;
-	System.out.print("Enter the length of pattern: ");
 	Scanner in=new Scanner(System.in);
+	System.out.print("Enter the pattern length :");
 	int p=in.nextInt();
 	if(p>1 || p<=9){
 	    for(i=1;i<=p;i++){

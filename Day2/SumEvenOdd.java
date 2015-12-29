@@ -7,14 +7,15 @@ class SumEvenOdd{
         String str="";
 	int sum=0,i;
 	try{
-	    str=ar[0];
+	    str=ar[0].toLowerCase();
 	}
 	catch(Exception e){
 	    System.out.println("You forgot to pass string as command line arguments");
 	    System.out.println("No problem, enter the string Now :");
 	    BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 	    try{
-	        str=br.readLine();
+	        str=(br.readLine()).toLowerCase();
+		br.close();
 	    }catch(Exception e1){}
 	}
 	for(i=0;i<str.length();i++){

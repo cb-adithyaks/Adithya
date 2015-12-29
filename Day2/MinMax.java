@@ -6,8 +6,10 @@ class MinMax{
     public static void main(String ar[]){
     	int i,min,max;
     	Scanner in=new Scanner(System.in);
+	System.out.print("Enter array size :" );
     	int n=in.nextInt();				//Array size
     	int a[]=new int[n];
+	System.out.print("Enter array values: ");
     	for(i=0;i<n;i++){
         a[i]=in.nextInt();			//Input
     	}

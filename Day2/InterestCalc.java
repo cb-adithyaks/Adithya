@@ -9,9 +9,11 @@ class InterestCalc{
 	//Using scanner to get i/p
 	Scanner in=new Scanner(System.in);		
 	// Getting values for p,r,t
-	System.out.println("Enter principle, rate and time-yrs as type double");
+	System.out.print("Enter principle :");
 	p=in.nextDouble();
+	System.out.print("Enter rate :");
 	r=in.nextDouble();
+	System.out.print("Enter period in yrs :");
 	t=in.nextDouble();
 	double si=p*r*t/100;
 	double x=(1+r/100);	
