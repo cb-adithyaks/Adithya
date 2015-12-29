@@ -3,17 +3,21 @@
 package Day_2;
 public class Fibonacci
 {
+    public void print_fibonacci(int N){
+	if(N==0){
+	    System.out.print(“0,”);
+	    return 0;		
+	}	
+	else if(N==1){
+	    System.out.print(“1,”);			//base case
+	    return 1;
+	}
+	else{
+	    System.out.print((fibonacci(N-1)+fibonacci(N-2))+”,”);
+	}
+    }
     public static void main(String ar[]){
 	int n=Integer.parseInt(ar[0]);	//Number of terms is passed command line
-	int i;
-	int a[]=new int[n];
-	a[0]=0;a[1]=1;a[2]=1;
-	for(i=3;i<n;i++){
-		a[i]=a[i-1]+a[i-2];	// Storing the N fibonacci terms	
-	}
-	for(i=0;i<n-1;i++){
-		System.out.print(a[i]+",");  // Printing the fibonacci series
-	}
-	System.out.println(a[i]);
+	print_fibonacci(n);
     }	
 }
