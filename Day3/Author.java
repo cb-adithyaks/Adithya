@@ -2,27 +2,27 @@
 */
 package com.chargebee.training.day3;
 class Author{
-	String name;
-	String email;
-	char gender;
+	private String name;
+	private String email;
+	private char gender;
 	Author(String Name,String Email,char Gender){
 		name=Name;
 		email=Email;
 		gender=Gender;
 	}
-	String getName(){
+	public String getName(){
 		return name;
 	}
-	String getEmail(){
+	public String getEmail(){
 		return email;
 	}
-	void setEmail(String newEmail){
+	public void setEmail(String newEmail){
 		email=newEmail;
 	}
-	char getGender(){
+	public char getGender(){
 		return gender;
 	}
-	String toDisplay(){
+	public String toDisplay(){
 		String ret=name+"("+gender")"+" at "+email;
 		return ret;
 	} 
