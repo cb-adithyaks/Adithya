@@ -1,3 +1,5 @@
+/** This application helps in adding Author details
+*/
 package com.chargebee.training.day3;
 class Author{
 	String name;
@@ -26,7 +28,7 @@ class Author{
 	} 
 	public static void main(String ar[]){
 		Author ob=new Author("R.K Narayan","rknarayan@gmail.com",'M');
-        System.out.println(ob.toDisplay());
+        	System.out.println(ob.toDisplay());
 		ob.setEmail("rknarayan@yahoo.com");
 		System.out.println(ob.toDisplay());
 	}
