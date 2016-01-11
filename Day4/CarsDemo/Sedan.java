@@ -17,7 +17,7 @@ public class Sedan extends Car{
 		}
 	}
 	public String print(){
-		String ret="\n\nSedan car"+"\nCar speed : "+getSpeed()+"\nRegular price of car : "+getRegularPrice()+"\nColor of car : "+getColor()+"\nLength of the car : "+length+"\nSale price : Rs"+this.getSalePrice();
+		String ret="\n\nSedan car"+"\nCar speed : "+getSpeed()+"\nRegular price of car : "+getRegularPrice()+" \nColor of car : "+getColor()+"\nLength of the car : "+length+"\nSale price : Rs"+this.getSalePrice();
 		return ret;
 	}
 }

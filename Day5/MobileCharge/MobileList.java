@@ -8,7 +8,7 @@ public class MobileList{
 		Random r=new Random();
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		while(true){
-			System.out.println("1- Add a mobile\n2- Print the list of Mobiles\nAny other to exit\nEnter your choice: ");
+			System.out.println("1- Add a mobile\n2- Print the list of Mobiles\nAny other to exit\nEnter your choice : ");
 			ch=Integer.parseInt(br.readLine());
 			if(ch==1){
 				list[i]=new Mobile(){

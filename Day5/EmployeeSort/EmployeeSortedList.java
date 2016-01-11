@@ -22,7 +22,7 @@ public class EmployeeSortedList{
 			emp[i++]=new Employee(name,salary,age);
 		}
 		
-		System.out.println("\n1 - Sort employees based on their name\n2 - Sort employees based on their age\nAnyother - Sort employees based on their salary");
+		System.out.println("\n1 - Sort employees based on their name\n2 - Sort employees based on their age\nAnyother - Sort employees based on their salary ");
 		ch1=Integer.parseInt(br.readLine());
 		if(ch1==1){
 			Arrays.sort(emp,new Comparator<Employee>(){

@@ -21,7 +21,7 @@ public class Car{
 		return color;
 	}
 	public String print(){
-		String ret="\n\nCar"+"\nCar speed : "+speed+"\nRegular price of car : "+regularPrice+"\nColor of car : "+color+"\nSale price : Rs"+getSalePrice();
+		String ret="\n\nCar "+"\nCar speed : "+speed+"\nRegular price of car : "+regularPrice+"\nColor of car : "+color+"\nSale price : Rs"+getSalePrice();
 		return ret;
 	}
 }

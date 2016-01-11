@@ -72,7 +72,7 @@ public class FactorialPrint{
 		String str;
 
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("Enter lower limit:");
+		System.out.print("Enter lower limit: ");
 		lowerLimit = scanner.nextInt();
 		System.out.print("Enter Upper limit:");
 		upperLimit = scanner.nextInt();

@@ -10,7 +10,7 @@ public class Ostrich extends Bird{
 		gender=g;
 	}
 	public String movement(){
-		return("Ostrich use their limbs for locomotion");
+		return("Ostrich use their limbs for locomotion ");
 	}
 	
 	

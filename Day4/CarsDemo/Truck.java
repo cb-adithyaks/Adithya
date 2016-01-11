@@ -15,7 +15,7 @@ public class Truck extends Car{
 		}
 	}
 	public String print(){
-		String ret="\n\nTruck"+"Car speed : "+getSpeed()+"Regular price of car : "+getRegularPrice()+"Color of car : "+getColor()+"Weight of the car : "+weight+"Sale price : Rs"+this.getSalePrice();
+		String ret="\n\nTruck"+"Car speed : "+getSpeed()+”\nRegular price of car : "+getRegularPrice()+"\nColor of car : "+getColor()+"\nWeight of the car : "+weight+"\nSale price : Rs"+this.getSalePrice();
 		return ret;
 	} 
 }

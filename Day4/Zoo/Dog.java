@@ -10,7 +10,7 @@ class Dog extends Mammal{
 		gender=g;
 	}
 	public String movement(){
-		return("Dogs use their limbs for locomotion");
+		return("Dogs use their limbs for locomotion ");
 	}
 	
 	

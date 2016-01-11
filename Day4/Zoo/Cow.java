@@ -10,7 +10,7 @@ public class Cow extends Mammal implements IsHerbivorous{
 		gender=g;
 	}
 	public String movement(){
-		return("Cows use their limbs for locomotion");
+		return("Cows use their limbs for locomotion ");
 	}
 	
 	

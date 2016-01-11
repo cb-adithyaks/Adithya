@@ -4,7 +4,7 @@ package com.chargebee.adithya.training.Zoo;
 import java.io.*;
 class Zoo{
 	public static void main(String ar[])throws Exception{
-		System.out.println("\nWelcome to Zoo\n\n");
+		System.out.println("\nWelcome to Zoo \n\n");
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		Animal animals[]=new Animal[20];
 		int i=0;

@@ -6,7 +6,7 @@ public class Mobile{
 	private String name;
 	private int remainingCharge;
 	public void name(){
-		name="Nokia";
+		name="Nokia ";
 	}
 	public void remainingCharge(){
 		remainingCharge=(new Random()).nextInt(100)+1;

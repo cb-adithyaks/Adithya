@@ -18,6 +18,6 @@ public class Employee{
 		return name;
 	}
 	public String print(){
-		return(name+"\t\t"+age+"\t\t"+salary);
+		return(name+"\t\t"+age+"\t\t"+salary+" ");
 	}	    		
 }

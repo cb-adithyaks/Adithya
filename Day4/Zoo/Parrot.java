@@ -10,7 +10,7 @@ public class Parrot extends Bird implements IsHerbivorous,CanFly{
 		gender=g;
 	}
 	public String movement(){
-		return("Parrot use their limbs for locomotion");
+		return("Parrot use their limbs for locomotion ");
 	}
 	
 	

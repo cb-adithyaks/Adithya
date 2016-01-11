@@ -18,7 +18,7 @@ public class Bat extends Mammal implements CanFly{
 	
 	
 	public String print(){
-		String ret="\n Details of the bat :\n"+"Gender : "+gender+"\nColor : "+color+"\n Age : "+age+"\nMode of locomotion :"+movement();
+		String ret="\n Details of the bat :\n "+"Gender : "+gender+"\nColor : "+color+"\n Age : "+age+"\nMode of locomotion :"+movement();
 		return ret;
 	}
 }
