@@ -15,34 +15,34 @@ class IncomeTax{
 	}
 	static void taxCalulate(IncomeTax employee[],int n){
 		for(int i=0;i<n;i++){
-		    employee[i].taxableIncome=employee[i].totalIncome-15000-employee[i].dependents*5000;	//Standard 15k off for all
+		    employee[i].taxableIncome=employee[i].totalIncome-15000-employee[i].dependents*5000;			//Standard 15k off for all (tax exemptions)
 		    employee[i].taxAmount=0;
-			if(employee[i].taxableIncome>250000 && employee[i].gender=='M'){
-				if(employee[i].taxableIncome>500000){
-					if(employee[i].taxableIncome>1000000){
-						employee[i].taxAmount+=0.1*(250000)+0.2*(500000)+(employee[i].taxableIncome-1000000)*0.3;		// For men, 10% ->250 to 500k
-					}
-					else{
-						employee[i].taxAmount=0.2*(employee[i].taxableIncome-500000)+0.1*250000;
-					}		
-				}																									    // 20% -> 500k to 1000k
-				else{																									// 30% -> greater than 1000k
-					employee[i].taxAmount+=0.1*(employee[i].taxableIncome-250000);										
-				}
+		    if(employee[i].taxableIncome>250000 && employee[i].gender=='M'){
+			if(employee[i].taxableIncome>500000){
+			    if(employee[i].taxableIncome>1000000){
+				employee[i].taxAmount+=0.1*(250000)+0.2*(500000)+(employee[i].taxableIncome-1000000)*0.3;	// For men, 10% ->250 to 500k
+		            }              											// 20% -> 500k to 1000k
+			    else{												// 30% -> greater than 1000k
+				employee[i].taxAmount=0.2*(employee[i].taxableIncome-500000)+0.1*250000;
+			    }		
+			}																									    
+			else{																									
+			    employee[i].taxAmount+=0.1*(employee[i].taxableIncome-250000);										
 			}
-			else if(employee[i].taxableIncome>300000 && employee[i].gender=='F'){
-				if(employee[i].taxableIncome>600000){																	// For women, 10% ->300k to 500k
-					if(employee[i].taxableIncome>1000000){																// 20% -> 600k to 1000k	
-						employee[i].taxAmount+=0.1*(300000)+0.2*(600000)+(employee[i].taxableIncome-1000000)*0.3;		// 30% -> greater than 1000k
-					}
-					else{
-						employee[i].taxAmount=0.2*(employee[i].taxableIncome-600000)+0.1*300000;
-					}		
-				}	
-				else{
-					employee[i].taxAmount+=0.1*(employee[i].taxableIncome-300000);
-				}
+		    }
+		    else if(employee[i].taxableIncome>300000 && employee[i].gender=='F'){
+			if(employee[i].taxableIncome>600000){									// For women, 10% ->300k to 500k						
+			    if(employee[i].taxableIncome>1000000){								// 20% -> 600k to 1000k							
+				employee[i].taxAmount+=0.1*(300000)+0.2*(600000)+(employee[i].taxableIncome-1000000)*0.3;	// 30% -> greater than 1000k
+			    }
+		    	    else{
+				employee[i].taxAmount=0.2*(employee[i].taxableIncome-600000)+0.1*300000;
+			    }		
+			}	
+			else{
+			    employee[i].taxAmount+=0.1*(employee[i].taxableIncome-300000);
 			}
+		    }
 		}
 	}
 	public void display(){
