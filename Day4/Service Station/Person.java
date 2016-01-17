@@ -1,4 +1,4 @@
-package com.chargebee.adithya.training.ServiceStation;
+package com.chargebee.adithya.training.servicestation;
 
 public class Person{
 	private String name;
