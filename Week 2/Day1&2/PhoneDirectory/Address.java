@@ -1,4 +1,4 @@
-package com.chargebee.adithya.training.PhoneDirectory;
+package com.chargebee.adithya.training.phonedirectory;
 public class Address{
 		private String flat_no;
 		private String road;

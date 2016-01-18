@@ -1,4 +1,4 @@
-package com.chargebee.adithya.training.PhoneDirectory;
+package com.chargebee.adithya.training.phonedirectory;
 import java.util.*;
 
 public class PhoneBook{

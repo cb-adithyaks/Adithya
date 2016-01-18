@@ -1,4 +1,4 @@
-package com.chargebee.adithya.training.Factorial;
+package com.chargebee.adithya.training.factorial;
 import java.util.*;
 
 
@@ -50,7 +50,7 @@ class Factorial implements Iterable<Integer>{
 		upperLimit = scanner.nextInt();
 		Factorial fact = new Factorial(lowerLimit,upperLimit);
 		Iterator itr=fact.iterator();
-		System.out.print();
+		System.out.println();
 		while(itr.hasNext()){
 			itr.next();
 			if(itr.hasNext()){

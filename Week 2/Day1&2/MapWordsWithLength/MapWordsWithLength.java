@@ -1,15 +1,9 @@
-package com.chargebee.adithya.training.MapWordsWithLength;
+package com.chargebee.adithya.training.map;
 import java.util.*;
 import java.io.*;
 
 public class MapWordsWithLength{
-	public static void addWord(Map<Integer,ArrayList<String>> map,String value){
-		int key=value.length();
-		if(map.get(key)==null){
-			map.put(key, new ArrayList<String>());
-		}
-		map.get(key).add(value);
-	}
+	
 	public static void printWords(ArrayList<String> words){
 		Iterator itr=words.iterator();
 		String str;
@@ -23,6 +17,21 @@ public class MapWordsWithLength{
         	    	break;
         	    }
 		}
+		
+	}
+	public HashMap<Integer,ArrayList<String>> mapByLength(ArrayList<String> words){
+		HashMap<Integer,ArrayList<String>> map =new HashMap<Integer,ArrayList<String>>();
+		Iterator itr=words.iterator();
+		String value;
+		while(itr.hasNext()){
+        		value=itr.next().toString();									//Adding words in list to map with key as their length
+        	    	int key=value.length();
+			if(map.get(key)==null){
+				map.put(key, new ArrayList<String>());
+			}
+			map.get(key).add(value);
+		}
+		return map;
 		
 	}
 	public static void main(String ar[]){
@@ -39,12 +48,8 @@ public class MapWordsWithLength{
 			words.add(str);
 		}
 		
-		Iterator itr=words.iterator();
-		Map<Integer,ArrayList<String>> map=new HashMap<Integer,ArrayList<String>>();
-        	while(itr.hasNext()){
-        		str=itr.next().toString();									//Adding words in list to map with key as their length
-        	    addWord(map,str);
-		}
+		HashMap<Integer,ArrayList<String>> map=new MapWordsWithLength().mapByLength(words);
+        	
 		//System.out.println(map);
 		Iterator iterator=map.keySet().iterator();
 		while(iterator.hasNext()){
