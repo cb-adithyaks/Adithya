@@ -1,0 +1,3 @@
+Write a program which reads a text file text text.
+List all the words in alphabetical order with number of occurrence for each word.
+write the list into another text file in the format
