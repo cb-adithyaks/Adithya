@@ -1,0 +1,100 @@
+{
+"Customer Id":
+	{
+		"type":"default"
+		"column":"Customer Id"
+	}
+"Subscription Id":
+	{
+		"type":"default"
+		"column":"Subscription Id"
+	}
+"Invoice Number":
+	{
+		"type":"default"
+		"column":"Invoice Id"
+	}
+"Invoice Date":
+	{
+    	"type": "Date"
+    	"old format":"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+    	"new format":"M/dd/yyyy HH:mm:ss"
+    	"column":"Invoice Date"
+    }
+"Start Date":
+	{
+		"type": "Date"
+		"old format":"yyyy-MM-dd'T'HH:mm:ss:SSS'Z'"
+    	"new format":"M/dd/yyyy HH:mm:ss"
+    	"column":"Start Date"
+	}
+"Amount":
+	{
+		"type":"Divide"
+		"value":"100.00"
+		"column":"Amount"
+	}
+"Status":
+	{
+		"type":"default"
+		"column":"Status"
+	}	
+"Paid On"
+	{
+		"type": "default"
+		"column":"Paid On"
+	}
+"Next Retry"
+	{
+		"type": "Date"
+		"old format":"yyyy-MM-dd'T'HH:mm:ss:SSS'Z'"
+    	"new format":"M/dd/yyyy HH:mm:ss"
+    	"column":"Next Retry"
+	}
+"Refunded Amount"
+	{
+		"type":"Divide"
+		"value":"10.00"
+		"column":"Refunded Amount"
+	}
+"Recurring"
+	{
+		"type":"default"
+		"column":"Recurring"
+	}
+"First Invoice"
+	{
+		"type":"default"
+		"column":"First Invoice"
+	}
+"Tax Total"
+	{
+		"type":"Divide"
+		"value":"100.00"
+		"column":"Tax Total"
+	}
+"Customer First Name"
+	{
+		"type":"Customer"
+		"field":"{\"First Name\" : "
+		"column":"Customer Details"
+	}
+"Customer Last Name"
+	{
+		"type":"Customer"
+		"column":"Customer Details"
+		"field":",\"Last Name\" : "
+	}
+"Customer Email"
+	{
+		"type":"Customer"
+		"column":"Customer Details"
+		"field":",\"Email\" : "
+	}
+"Customer Company"
+	{
+		"type":"Customer"
+		"column":"Customer Details"
+		"field":",\"Company\" : "
+	}
+}

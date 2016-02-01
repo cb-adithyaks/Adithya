@@ -27,12 +27,13 @@ public class JsonStudentTeacher{
 			marks[index]=new Mark(markObject.getInt("Mark"),markObject.getString("Subject"));
 		}
 			
-		Student student = new Student(	studentObject.getString("Date Of Joining"),
-										studentObject.getString("ID"),
-										studentObject.getString("Name"),
-										studentObject.getString("Std"),
-										marks
-									);
+		Student student = new Student(	
+						studentObject.getString("Date Of Joining"),
+						studentObject.getString("ID"),
+						studentObject.getString("Name"),
+						studentObject.getString("Std"),
+						marks
+					     );
 
 
 		JSONArray teacherClasses = teacherObject.getJSONArray("Classes Taking Care Of");
@@ -43,12 +44,12 @@ public class JsonStudentTeacher{
 		}
 	
 		Teacher teacher = new Teacher(
-										teacherObject.getString("Name"),
-										teacherObject.getString("ID"),
-										teacherObject.getString("Date Of Joining"),
-										classesTakingCareOf,
-										teacherObject.getInt("Salary")
-									);	
+						teacherObject.getString("Name"),
+						teacherObject.getString("ID"),
+						teacherObject.getString("Date Of Joining"),
+						classesTakingCareOf,
+						teacherObject.getInt("Salary")
+					     );	
 		
 		System.out.println(student.getName()+","+student.getId()+","+student.getStd()+","+student.getDateOfJoining());
 		System.out.println(teacher.getName()+","+teacher.getId()+","+teacher.getSalary()+","+teacher.getDateOfJoining());

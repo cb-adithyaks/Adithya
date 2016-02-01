@@ -1,20 +1,28 @@
 package com.chargebee.adithya.training.phonedirectory;
+import java.util.*;
 public class Phone{
-	private String mobile;
-	private String work;
-	private String home;
-	public Phone(String mobile,String work,String home){
-		this.mobile=mobile;
-		this.work=work;
-		this.home=home;
+	private Map<String,String> phoneNumbers;
+
+	public Phone(Map<String,String> phoneNumbers){
+		this.phoneNumbers=new HashMap<String,String>();
+		System.out.println(phoneNumbers);
+		this.phoneNumbers=phoneNumbers;
+	}
+
+	public Map<String,String> getPhoneNumbers(){
+		return phoneNumbers;
 	}
 	public String getMobileNumber(){
-		return mobile;
-	}
-	public String getWorkNumber(){
-		return work;
+		return(phoneNumbers.get("Mobile"));
 	}
 	public String getHomeNumber(){
-		return home;
+		return(phoneNumbers.get("Home"));
+	}
+	public String getWorkNumber(){
+		return(phoneNumbers.get("Work"));
+	}
+
+	public void addContact(String tag,String phoneNumber){
+		phoneNumbers.put(tag,phoneNumber);
 	}
 }

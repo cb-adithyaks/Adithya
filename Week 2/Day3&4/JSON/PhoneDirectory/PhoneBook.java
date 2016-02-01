@@ -7,7 +7,12 @@ public class PhoneBook{
 	private	Address address;
 	PhoneBook(String details[]){
 		name=details[0];
-		phone=new Phone(details[1],details[2],details[3]);
+		Map<String,String> phoneNumbers=new HashMap<String,String>();
+		phoneNumbers.put("Mobile",details[1]);
+		phoneNumbers.put("Work",details[2]);
+		phoneNumbers.put("Home",details[3]);
+		System.out.println(phoneNumbers);
+		phone=new Phone(phoneNumbers);
 		address=new Address(details[4],details[5],details[6]);
 	}
 	public String getName(){

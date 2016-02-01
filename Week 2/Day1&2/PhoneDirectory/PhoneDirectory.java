@@ -20,6 +20,7 @@ public class PhoneDirectory{
 		}
 		return map;
 	}
+	
 	public HashMap mapMobileNumber(PhoneBook phonebook[]){
 		HashMap<String, PhoneBook> map = new HashMap<String, PhoneBook>();
 		for(int i=0;i<phonebook.length;i++){
@@ -27,6 +28,7 @@ public class PhoneDirectory{
 		}
 		return map;
 	}
+	
 	public HashMap mapHomeNumber(PhoneBook phonebook[]){
 		HashMap<String, PhoneBook> map = new HashMap<String, PhoneBook>();
 		for(int i=0;i<phonebook.length;i++){

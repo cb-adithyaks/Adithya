@@ -5,6 +5,9 @@ public class PhoneBook{
 	private String name;
 	private	Phone phone;
 	private	Address address;
+	/ name,
+	
+	static vbuilder (details[]) --> 
 	PhoneBook(String details[]){
 		name=details[0];
 		phone=new Phone(details[1],details[2],details[3]);
@@ -19,5 +22,7 @@ public class PhoneBook{
 	public Address getAddress(){
 	        return address;
 	}
+	
+	//print hee ...
 		
 }

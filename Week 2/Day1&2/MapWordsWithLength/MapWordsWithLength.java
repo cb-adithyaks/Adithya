@@ -19,17 +19,19 @@ public class MapWordsWithLength{
 		}
 		
 	}
-	public HashMap<Integer,ArrayList<String>> mapByLength(ArrayList<String> words){
-		HashMap<Integer,ArrayList<String>> map =new HashMap<Integer,ArrayList<String>>();
+	public Map<Integer,ArrayList<String>> mapByLength(ArrayList<String> words){
+		Map<Integer,ArrayList<String>> map =new HashMap<Integer,ArrayList<String>>();
 		Iterator itr=words.iterator();
 		String value;
 		while(itr.hasNext()){
         		value=itr.next().toString();									//Adding words in list to map with key as their length
-        	    	int key=value.length();
+        	    	
+			int key=value.length();
 			if(map.get(key)==null){
 				map.put(key, new ArrayList<String>());
 			}
 			map.get(key).add(value);
+			System.out.println(map);
 		}
 		return map;
 		
@@ -48,7 +50,7 @@ public class MapWordsWithLength{
 			words.add(str);
 		}
 		
-		HashMap<Integer,ArrayList<String>> map=new MapWordsWithLength().mapByLength(words);
+		Map<Integer,ArrayList<String>> map=new MapWordsWithLength().mapByLength(words);
         	
 		//System.out.println(map);
 		Iterator iterator=map.keySet().iterator();
@@ -58,6 +60,9 @@ public class MapWordsWithLength{
 			System.out.print("Words with length "+key+" : ");						//Printing the map
 			words=map.get(key);
 			printWords(words);
+		}
+		for(Map.Entry<Integer,ArrayList<String>> entry : map.entrySet()){
+			System.out.println(entry.getKey()+":"+entry.getValue());	
 		}
 	}
 }

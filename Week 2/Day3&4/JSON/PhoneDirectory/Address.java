@@ -1,4 +1,5 @@
 package com.chargebee.adithya.training.phonedirectory;
+
 public class Address{
 		private String flat_no;
 		private String road;
@@ -11,7 +12,22 @@ public class Address{
 		public String getAddress(){
 		return (flat_no+","+road+","+city+".");
 		}
+		public String getRoad(){
+			return road;
+		}
+		public String flat_no(){
+			return flat_no;
+		}
 		public String getCity(){
 		return city;
 		}
+		public void setRoad(String road){
+			this.road=road;
+		}
+		public void setFlat_no(String flat_no){
+			this.flat_no=flat_no;
+		}
+		public void setCity(String city){
+			this.city=city;
+		}		
 }
