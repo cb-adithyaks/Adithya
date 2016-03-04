@@ -52,11 +52,15 @@ select student_id, subject_id, year, quarterly, half_yearly, annual from marks w
 --		Format: student_id, subject_id, average, year*/
 select student_id,subject_id,((coalesce(quarterly,0)+coalesce(half_yearly,0)+coalesce(annual,0))/3) as average,year from marks;
 
+//avg() 
+
 
 /*6)List the average marks(in quarterly, half_yearly & annual) for each subject scored for the years 2003 & 2004
 --		Format: student_id, subject_id, average, year*/
 select student_id,subject_id,((coalesce(quarterly,0)+coalesce(half_yearly,0)+coalesce(annual=0))/3) as average,year from marks where year in (2003,2004);
 
+*7) list the average marks per subject in an 2015 yr ..
+o/p : subject, average()
 
 
 

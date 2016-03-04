@@ -21,37 +21,54 @@ select name,SUM(coalesce(annual,0) as marks,year from marks inner join students 
 
 /*3)List the students with the total marks scored in quarterly from all the subjects they had appeared during the year 2003
 		Format: name, total, grade*/
-select name,SUM(coalesce(quarterly,0)) as total,grade from marks inner join students on marks.student_id=students.id where year=2003 group by student_id,grade;
+select name,SUM(coalesce(quarterly,0)) as total,grade from marks inner join students on marks.student_id=students.id where year=2003 group by student_id;
 
 
 
 /*4)List the 9th and 10th grade students who received more than 3 medals.
 		Format: name, grade, no_of_medals*/
-select name,grade,count(medal_won) as no_of_medals from  students inner join medals on students.id=medals.student_id where grade in (9,10) group by medals.student_id,medals.year,grade having count(medal_won)>3;
+select s.name, m.grade, count(s.medal_won) as no_of_medals from  students s 
+	inner join medals m on s.id=m.student_id 
+	where m.grade in (9,10) 
+	group by m.student_id having count(medal_won)>3;
 
 
 
 /*5)List the students who got less than 2 medals. This should also include the students who has not won any medals.
 		Format: name, grade, no_of_medals*/
-select name,ifnull(grade,"in all grades") as grades,count(medal_won) as no_of_medals from  students left join medals on students.id=medals.student_id group by students.id,grade having count(medal_won)<2;
+select name,grades,count(medal_won) as no_of_medals from  students left join medals on students.id=medals.student_id group by students.id having count(medal_won)<2;
 
 
 
 /*6)List the students who has not yet received any medals but scored more than 90 marks in all the subjects in the annual exam for that year.
 		Format: name, year*/
-select name,marks.year from students left join medals on students.id = medals.student_id left join marks on marks.student_id = students.id group by students.id,medals.id,marks.year having sum(if(marks.annual>90,0,1)) = 0 and count(medals.id) = 0;
+select name,marks.year from students 
+	left join medals on students.id = medals.student_id 
+	left join marks on marks.student_id = students.id 
+	group by students.id,marks.year 
+		having sum(if(marks.annual>90,0,1)) = 0 and count(medals.id) = 0;
 
 
 
 /*7)List the records from the medals table for the students who had won more than 3 medals.
 		Format: name, game_id, medal_won, year, grade*/
-select name,medals.year from students left join medals on students.id = medals.student_id left join marks on marks.student_id = students.id group by students.id,medals.id,marks.year having sum(if(annual>40,0,1)) = 0 and count(medals.id) = 0;
+select name,medals.year from students 
+	left join medals on students.id = medals.student_id 
+	left join marks on marks.student_id = students.id 
+	group by students.id,marks.year having count(medals.id) = 0;
 
+//inner .. joins...
 
 
 /*8)List the number of medals and percentage of marks(based on total for the 5 subjects) scored in each year.
 		Format: name, medals, quarterly_per, half_yearly_per, annual_per, year, grade*/
-select students.name,ifnull(derived_medals.medals,0) as medals,avg(ifnull(quarterly,0)) as quarterly_per,avg(ifnull(half_yearly,0)) as half_yearly_per,avg(ifnull(annual,0)) as annual_per,marks.year,marks.grade from marks inner join students on marks.student_id=students.id left join (select student_id,count(medal_won)as medals,year,grade from medals group by student_id,year,grade) as derived_medals on marks.student_id=derived_medals.student_id  group by marks.student_id,marks.year,marks.grade,derived_medals.medals;
+select students.name,ifnull(derived_medals.medals,0) as medals,avg(ifnull(quarterly,0)) as quarterly_per,avg(ifnull(half_yearly,0)) as half_yearly_per,avg(ifnull(annual,0)) as annual_per,marks.year,marks.grade from marks 
+inner join students on marks.student_id=students.id 
+left join (select student_id,count(medal_won)as medals,year from medals group by student_id,year) as derived_medals 
+on marks.student_id=derived_medals.student_id  
+group by marks.student_id,marks.year;
+
+//use inner join ... instead of sub query
 
 
 
@@ -84,7 +101,9 @@ delimiter ;
 
 
 
-select name,setRating(sum(coalesce(quarterly,0))) as quarterly_rating,setRating(sum(coalesce(half_yearly,0))) as half_yearly_rating,setRating(sum(coalesce(annual,0))) as annual_rating,year,grade from marks inner join students on marks.student_id=students.id group by student_id,year,grade;
+select name,setRating(sum(coalesce(quarterly,0))) as quarterly_rating,setRating(sum(coalesce(half_yearly,0))) as half_yearly_rating,setRating(sum(coalesce(annual,0))) as annual_rating,year,grade from marks 
+inner join students on marks.student_id=students.id 
+group by student_id,year;
 
 
 
